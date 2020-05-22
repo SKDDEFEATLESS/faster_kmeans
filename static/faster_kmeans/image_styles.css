@@ -1,0 +1,18 @@
+
+
+.Patient {
+background: url('../images/Patient.jpg') no-repeat;
+background-position: center;
+}
+.Registration {
+background: url('../images/Registration.jpg') no-repeat;
+background-position: center;
+}
+.Consultation {
+background: url('../images/Consultation.jpg') no-repeat;
+background-position: center;
+}
+.Case_History {
+background: url('../images/Case_History.jpg') no-repeat;
+background-position: center;
+}
