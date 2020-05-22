@@ -195,19 +195,19 @@ class Kmeans:
 def makeRandomPoint(n, lower, upper):
     return numpy.random.normal(loc=upper, size=[lower, n])
 
-# pointList = []
-# x = []
-# y = []
-# c = []
-# numPoints = 10000
-# dim = 10
-# numClusters = 100
-# k = 0
-# for i in range(0,numClusters):
-#     num = int(numPoints/numClusters)
-#     p = makeRandomPoint(dim,num,k)
-#     k += 5
-#     pointList += p.tolist()
+pointList = []
+x = []
+y = []
+c = []
+numPoints = 10000
+dim = 10
+numClusters = 100
+k = 0
+for i in range(0,numClusters):
+    num = int(numPoints/numClusters)
+    p = makeRandomPoint(dim,num,k)
+    k += 5
+    pointList += p.tolist()
 
 # start = time.time()
 # print(k)

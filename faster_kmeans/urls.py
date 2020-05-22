@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from info.views import home
-from core.views import run_dataset
+from core.views import run_dataset,run_random
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name='home'),
     path('run_dataset',run_dataset,name='run_dataset'),
+    path('run_random',run_random,name='run_random'),
 
 ]

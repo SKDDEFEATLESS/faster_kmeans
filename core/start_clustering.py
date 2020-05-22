@@ -6,11 +6,16 @@ from .triangle_inequality import *
 from .faster_triangle_inequality import *
 from .datasetloader import datasetloader
 
-def start_clustering(numClusters,kmeans_threshold,centroids_to_remember,algorithm):
-	pointList=datasetloader("birch")
-	print("here")
-	# numClusters=10 #take input
+def start_clustering(numClusters,kmeans_threshold,centroids_to_remember,algorithm,is_random,number_of_points,dim):
 	numClusters=int(numClusters)
+	if is_random==False:
+		pointList=datasetloader("birch")
+		print("here")
+	else:
+		number_of_points=int(number_of_points)
+		dim=int(number_of_points)
+		pointList=get_random_points(number_of_points,numClusters,dim)
+	# numClusters=10 #take input
 	kmeans_threshold=int(kmeans_threshold)
 	centroids_to_remember=int(centroids_to_remember)
 	# Time=[]
@@ -63,14 +68,18 @@ def start_clustering(numClusters,kmeans_threshold,centroids_to_remember,algorith
 		Time+=" seconds, Time taken for Faster Triangle Inequality with initial centorids: "+str(time.time() - start)
 		return Time
 
+def get_random_points(number_of_points,numClusters,dim):
+	pointList = []
+	x = []
+	y = []
+	c = []
+	k = 0
+	for i in range(0,numClusters):
+		num = int(number_of_points/numClusters)
+		p = makeRandomPoint(dim,num,k)
+		k += 0
+		pointList += p.tolist()
+	return pointList
 
-
-
-	# print(time1)
-	# print(time2)
-	# print(time3)
-	# print(time4)
-	# print(time5)
-	# print(time6)
-	# print(time7)
-	# print(time8)
+def makeRandomPoint(n, lower, upper):
+	return numpy.random.normal(loc=upper, size=[lower, n])
