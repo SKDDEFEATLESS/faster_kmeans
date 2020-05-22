@@ -109,6 +109,7 @@ li {
 }*/
 .btn-outline-info{
 margin: auto;
+width:300px;
 }
 .bg-steel {
   background-color: #2b70a1;
@@ -180,4 +181,10 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+.form-group{
+/*  text-align: center;*/
+}
+.form-control{
+/*  width: auto;*/
 }
